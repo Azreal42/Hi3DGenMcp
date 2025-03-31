@@ -357,9 +357,26 @@ wheels = [
 ]
 
 [[package]]
+name = "diff-gaussian-rasterization"
+version = "0.0.0"
+source = { git = "https://github.com/autonomousvision/mip-splatting.git?subdirectory=submodules%2Fdiff-gaussian-rasterization&rev=main#dda02ab5ecf45d6edb8c540d9bb65c7e451345a9" }
+
+[[package]]
 name = "diffoctreerast"
 version = "0.0.0"
 source = { git = "https://github.com/JeffreyXiang/diffoctreerast.git?rev=b09c20b84ec3aace4729e6e18a613112320eca3a#b09c20b84ec3aace4729e6e18a613112320eca3a" }
+
+[[package]]
+name = "diffrp-nvdiffrast"
+version = "0.3.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/17/aa/e6585da541fb3b129038875dbe1fcbabf2e63d6b5cbb1dfba49ff9d83487/diffrp_nvdiffrast-0.3.3.1.tar.gz", hash = "sha256:3c98d17810a2c90e61b3a1a931ba5e17542dcda84733b886bcd6e66b52c9976e", size = 111197 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/14/e2/0667645dd495a4bdb3a097f3d16fdee2c6875e2d923cbe299c45c9e043b7/diffrp_nvdiffrast-0.3.3.1-py3-none-any.whl", hash = "sha256:cee41fe51b6fca1c7a7a992d06f034bca144c2c69a630bebbb8eea64094fd030", size = 142816 },
+]
 
 [[package]]
 name = "easydict"
@@ -554,7 +571,9 @@ name = "hi3dgenmcp"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "diff-gaussian-rasterization" },
     { name = "diffoctreerast" },
+    { name = "diffrp-nvdiffrast" },
     { name = "easydict" },
     { name = "flash-attn" },
     { name = "igraph" },
@@ -591,7 +610,9 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "black", marker = "extra == 'dev'", specifier = ">=23.0.0" },
+    { name = "diff-gaussian-rasterization", git = "https://github.com/autonomousvision/mip-splatting.git?subdirectory=submodules%2Fdiff-gaussian-rasterization&rev=main" },
     { name = "diffoctreerast", git = "https://github.com/JeffreyXiang/diffoctreerast.git?rev=b09c20b84ec3aace4729e6e18a613112320eca3a" },
+    { name = "diffrp-nvdiffrast" },
     { name = "easydict", specifier = ">=1.13" },
     { name = "flake8", marker = "extra == 'dev'", specifier = ">=6.0.0" },
     { name = "flash-attn", url = "https://github.com/kingbri1/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu124torch2.4.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" },
