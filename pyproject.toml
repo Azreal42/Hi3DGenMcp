@@ -12,14 +12,25 @@ dependencies = [
     "xformers==0.0.27.post2",
     "utils3d @ git+https://github.com/EasternJournalist/utils3d.git@9a4eb15e4021b67b12c460c7057d642626897ec8",
     "mcp[cli]>=1.4.1",
-    "flash_attn"
+    "flash_attn", # custom wheel c.f. below
+    "numpy<2",
+    "pillow>=11.1.0",
+    "onnxruntime-gpu>=1.21.0",
+    "trimesh>=4.6.6",
+    "scipy>=1.15.2",
+    "tqdm>=4.67.1",
+    "kaolin==0.17.0",
+    "easydict>=1.13",
+    "rembg>=2.0.65",
+    "open3d>=0.19.0",
+    "pymeshfix>=0.17.0",
+    "igraph>=0.11.8",
+    "diffoctreerast @ git+https://github.com/JeffreyXiang/diffoctreerast.git@b09c20b84ec3aace4729e6e18a613112320eca3a"
 ]
-
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
-
 
 [project.optional-dependencies]
 dev = [
@@ -37,12 +48,16 @@ url = "https://download.pytorch.org/whl/cu124"
 explicit = true
 
 [tool.uv.sources]
+kaolin = [
+    { url = "https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.4.0_cu124/kaolin-0.17.0-cp312-cp312-win_amd64.whl" }
+]
 torch = [
     { index = "pytorch" },
 ]
 torchvision = [
     { index = "pytorch" },
 ]
+# from 
 flash_attn = { path = "./whl/flash_attn-2.7.4+cu124torch2.6.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
 
 [tool.setuptools]
