@@ -25,7 +25,8 @@ dependencies = [
     "open3d>=0.19.0",
     "pymeshfix>=0.17.0",
     "igraph>=0.11.8",
-    "diffoctreerast @ git+https://github.com/JeffreyXiang/diffoctreerast.git@b09c20b84ec3aace4729e6e18a613112320eca3a"
+    "diffoctreerast @ git+https://github.com/JeffreyXiang/diffoctreerast.git@b09c20b84ec3aace4729e6e18a613112320eca3a",
+    "spconv-cu124>=2.3.8",
 ]
 
 [build-system]
@@ -57,8 +58,10 @@ torch = [
 torchvision = [
     { index = "pytorch" },
 ]
-# from 
-flash_attn = { path = "./whl/flash_attn-2.7.4+cu124torch2.6.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
+flash_attn = [
+    {  url = "https://github.com/kingbri1/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu124torch2.4.0cxx11abiFALSE-cp312-cp312-win_amd64.whl" }
+]
+
 
 [tool.setuptools]
 packages = ["src"]
