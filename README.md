@@ -1,5 +1,7 @@
 # Hi3DGenMcp
 
+THIS IS A WIP ! IT'S NOT WORKING AT THIS MOMENT
+
 ## Setup
 ### Windows
 Need cuda 12.4 : https://developer.nvidia.com/cuda-12-4-0-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local
