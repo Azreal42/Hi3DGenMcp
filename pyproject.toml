@@ -29,6 +29,7 @@ dependencies = [
     "diff_gaussian_rasterization @ git+https://github.com/autonomousvision/mip-splatting.git@main#subdirectory=submodules/diff-gaussian-rasterization",
     "diffrp-nvdiffrast",
     "spconv-cu124>=2.3.8",
+    "xatlas>=0.0.10",
 ]
 
 [build-system]
