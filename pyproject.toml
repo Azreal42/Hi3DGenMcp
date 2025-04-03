@@ -27,9 +27,14 @@ dependencies = [
     "igraph>=0.11.8",
     "diffoctreerast @ git+https://github.com/JeffreyXiang/diffoctreerast.git@b09c20b84ec3aace4729e6e18a613112320eca3a",
     "diff_gaussian_rasterization @ git+https://github.com/autonomousvision/mip-splatting.git@main#subdirectory=submodules/diff-gaussian-rasterization",
-    "diffrp-nvdiffrast",
-    "spconv-cu124>=2.3.8",
+    "diffrp-nvdiffrast>=0.3.3.1",
+    "spconv-cu124==2.3.8",
     "xatlas>=0.0.10",
+    "diffusers==0.28.0",
+    "accelerate>=1.6.0",
+    "huggingface-hub==0.25.0",
+    "timm>=1.0.15",
+    "kornia>=0.8.0",
 ]
 
 [build-system]

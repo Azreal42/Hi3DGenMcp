@@ -79,7 +79,7 @@ class TrellisImageTo3DPipeline(Pipeline):
         ])
         self.image_cond_model_transform = transform
 
-    def preprocess_image(self, input: Image.Image) -> Image.Image:
+    def preprocess_image(self, input: Image.Image, resolution = 1024) -> Image.Image:
         """
         Preprocess the input image.
         """
@@ -109,7 +109,7 @@ class TrellisImageTo3DPipeline(Pipeline):
         size = int(size * 1.2)
         bbox = center[0] - size // 2, center[1] - size // 2, center[0] + size // 2, center[1] + size // 2
         output = output.crop(bbox)  # type: ignore
-        output = output.resize((518, 518), Image.Resampling.LANCZOS)
+        output = output.resize((resolution, resolution), Image.Resampling.LANCZOS)
         output = np.array(output).astype(np.float32) / 255
         output = output[:, :, :3] * output[:, :, 3:4]
         output = Image.fromarray((output * 255).astype(np.uint8))
